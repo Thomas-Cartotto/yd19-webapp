@@ -70,8 +70,9 @@ router.post('/hitgong', async (ctx,next) => {
   client.publish('hit/gong', 'This is YeurDreamin', function() {
     console.log("Message is published");
   });
-  // Stay on Page
-  ctx.throw(200, 'Owch! That hurt...')
+  
+  //var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...', '', ''];
+  ctx.throw(200, ctx.body);
 });
 
 const PORT = process.env.PORT || 5001;
