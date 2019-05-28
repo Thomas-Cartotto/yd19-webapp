@@ -65,7 +65,7 @@ router.get('/iot', async ctx => {
 })
 
 // Ping Route
-router.get('/send', async (ctx,next) => {
+router.get('/hitgong', async (ctx,next) => {
   // publish a message to a topic
   client.publish('hit/gong', 'This is YeurDreamin', function() {
     console.log("Message is published");
