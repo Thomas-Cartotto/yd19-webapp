@@ -74,8 +74,8 @@ router.post('/hitgong', async (ctx,next) => {
   
   const urlParams = new URLSearchParams(ctx.url);
   const myParam = urlParams.get('user_name');
-  //var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...', '', ''];
-  ctx.throw(200, `Data ${qs.parse(ctx.body.text)} Text: ${ctx.body.text}`);
+  var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...'];
+  ctx.throw(200, `${messageArray[Math.random() * (3 - 0) + 0]}`);
 });
 
 const PORT = process.env.PORT || 5001;
