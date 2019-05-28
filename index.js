@@ -5,6 +5,7 @@ const render = require('koa-ejs');
 const mqtt = require('mqtt');
 const url = require('url');
 const Router = require('koa-router');
+const qs = require('qs')
 
 const app = module.exports = new Koa();
 const router = new Router();
@@ -74,7 +75,7 @@ router.post('/hitgong', async (ctx,next) => {
   const urlParams = new URLSearchParams(ctx.url);
   const myParam = urlParams.get('user_name');
   //var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...', '', ''];
-  ctx.throw(200, `Url: ${ctx.url} Url: ${ctx.originalUrl}`);
+  ctx.throw(200, `Data ${qs.parse(ctx.body)}`);
 });
 
 const PORT = process.env.PORT || 5001;
