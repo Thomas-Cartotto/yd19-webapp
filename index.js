@@ -74,7 +74,7 @@ router.post('/hitgong', async (ctx,next) => {
   const urlParams = new URLSearchParams(ctx.url);
   const myParam = urlParams.get('user_name');
   //var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...', '', ''];
-  ctx.throw(200, `Thanks ${myParam}`);
+  ctx.throw(200, `Url: ${ctx.url} Url: ${ctx.originalUrl}`);
 });
 
 const PORT = process.env.PORT || 5001;
