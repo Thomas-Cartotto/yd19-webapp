@@ -71,7 +71,7 @@ router.post('/hitgong', async (ctx,next) => {
     console.log("Message is published");
   });
   // Stay on Page
-  ctx.reply('Hey');
+  ctx.throw(200, 'Owch! That hurt...')
 });
 
 const PORT = process.env.PORT || 5001;
