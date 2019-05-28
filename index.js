@@ -72,7 +72,7 @@ router.post('/hitgong', async (ctx,next) => {
   });
   
   //var messageArray = ['Owch! That hurt...', 'Again?? My arm is tired', 'Im not made of metal you know...', '', ''];
-  ctx.throw(200, ctx.request.body);
+  ctx.throw(200, String(ctx.params));
 });
 
 const PORT = process.env.PORT || 5001;
