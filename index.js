@@ -71,13 +71,7 @@ router.post('/hitgong', async (ctx,next) => {
     console.log("Message is published");
   });
   // Stay on Page
-  ctx.status = 200;  
-});
-
-router.post('/panda', (ctx, next) => {
-  client.publish('hit/gong', 'This is YeurDreamin', function() {
-    console.log("Message is published");
-  });
+  ctx.reply('Hey');
 });
 
 const PORT = process.env.PORT || 5001;
