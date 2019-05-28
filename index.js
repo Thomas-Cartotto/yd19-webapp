@@ -38,14 +38,14 @@ client.stream.on('error', function (error) {
 
 client.on('connect', function() { // When connected  
   // subscribe to a topic
-  client.subscribe('hello/world', function() {
+  client.subscribe('hit/gong', function() {
     // when a message arrives, do something with it
     client.on('message', function(topic, message, packet) {
       console.log("Received '" + message + "' on '" + topic + "'");
     });
   }); 
   // publish a message to a topic
-  client.publish('hello/world', 'This is Sparta', function() {
+  client.publish('hit/gong', 'This is Sparta', function() {
     console.log("Message is published");
   //  client.end(); // Close the connection when published
   });
@@ -67,7 +67,7 @@ router.get('/iot', async ctx => {
 // Ping Route
 router.get('/send', async (ctx,next) => {
   // publish a message to a topic
-  client.publish('hello/world', 'This is YeurDreamin', function() {
+  client.publish('hit/gong', 'This is YeurDreamin', function() {
     console.log("Message is published");
   });
   // Stay on Page
