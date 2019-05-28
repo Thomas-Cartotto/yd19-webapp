@@ -65,13 +65,13 @@ router.get('/iot', async ctx => {
 })
 
 // Ping Route
-router.get('/hitgong', async (ctx,next) => {
+router.post('/hitgong', async (ctx,next) => {
   // publish a message to a topic
   client.publish('hit/gong', 'This is YeurDreamin', function() {
     console.log("Message is published");
   });
   // Stay on Page
-  ctx.status = 204;  
+  ctx.status = 200;  
 });
 
 const PORT = process.env.PORT || 5001;
